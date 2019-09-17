@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function check(){
+            var uname = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            p = pass.charAt(0)
+
+            if(uname.length ==0){
+                var s1 = document.getElementById("sp1");
+                s1.innerHTML = "<font color=red>Plese enter valid username</font>"
+            }
+            else if(pass.length < 6){
+                var s2 = document.getElementById("sp2");
+                s2.innerHTML = "<font color=red>Enter valid password</font>"
+            }
+            else if(pass.length > 12){
+                var s2 = document.getElementById("sp2");
+                s2.innerHTML = "<font color=red>Enter valid password</font>"
+            }
+            else if(p != "A"){
+                var s2 = document.getElementById("sp2");
+                s2.innerHTML = "<font color=red>First letter should be A</font>"
+            }
+            
+            else{
+                alert("Welcome " +uname)
+            }
+        }
+            </script>
+        <title>Welcome to Cust Data</title>
+    </head>
+    <body bgcolor="black" text="white">
+        <h2><center>Login Form</center></h2>
+        <form>
+            <table cellspacing="10" cellpadding="10" align="center">
+           <tr><td>Username : </td><td><input type="text" name="username" id="username"/>
+           <span id="sp1"></span></td></tr>
+           <tr><td>Password : </td><td><input type="text" name="password" id="password"/>
+            <span id="sp2"></span></td></tr>
+           <tr><td align="center"><input type="submit" value="Login"> </td>
+            <td align="center"><input type="reset" value="Clear">
+            <input type="button" value="Check" onclick="check()"></td></tr> 
+        </table>
+        </form>
+
+    </body>
+</html>
